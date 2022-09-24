@@ -2,33 +2,42 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter first value");
-        float x = scanner.nextInt();
-        System.out.println("Enter second value");
-        float y = scanner.nextInt();
-        System.out.println("What do you want to do?\nSelected\n1.addition\n2.substraction\n3.multiplication\n4.division");
-        int select = scanner.nextInt();
+        int index = 5;
+
+        do {
+
+        Scanner variables = new Scanner(System.in);
+        System.out.println("Set x");
+        float x = variables.nextFloat();
+        System.out.println("Set y");
+        float y = variables.nextFloat();
+        System.out.println("What do you want to do?\nSelected\n1.Addition\n2.Substraction\n3.Multiplication\n4.Division\n5.Turn off");
+        int select = variables.nextInt();
+        Calculator cal1 = new Calculator();
 
 
-        switch (select) {
-            case 1:
-                System.out.println("Resoult " + (x+y));
-                break;
-            case 2:
-                System.out.println("Resoult " +(x-y));
-                break;
-            case 3:
-                System.out.println("Resoult " +(x*y));
-                break;
-            case 4:
-                System.out.println("Resoult " +(x/y));
-                break;
-
-
-
+            switch (select) {
+                case 1:
+                    System.out.println("Addition resoult: " + cal1.addition(x, y));
+                    break;
+                case 2:
+                    System.out.println("Substraction resoult: " + cal1.substraction(x, y));
+                    break;
+                case 3:
+                    System.out.println("Multiplication resoult: " + cal1.multiplication(+x, y));
+                    break;
+                case 4:
+                    System.out.println("Division Resoult: " + cal1.division(+x, y));
+                    break;
+                case 5:
+                    System.out.println("Turned off");
+                    break;
+            }
 
         }
+        while (index ==5);
+
+
 
     }
-}
+    }
